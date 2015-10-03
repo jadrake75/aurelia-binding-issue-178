@@ -1,4 +1,7 @@
-# aurelia-skeleton-navigation
+# aurelia-binding-issue-178
+
+This project is being used to demonstrate aurelia-binding [#178](https://github.com/aurelia/binding/issues/178)
+
 
 [![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
 [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -48,78 +51,3 @@ To run the app, follow these steps.
 ```html
 <script src="jspm_packages/github/webcomponents/webcomponentsjs@0.5.2/HTMLImports.js"></script>
 ```
-
-## Running The App under Electron
-
-To run the app under [Electron](http://electron.atom.io), follow these steps.
-
-1. Install [Electron](http://electron.atom.io)
-
-  ```shell
-  npm install electron-prebuilt -g
-  ```
-2. To start the app, execute the following command:
-
-  ```shell
-  electron .
-  ```
-
-
-## Bundling
-Bundling is performed by [Aurelia Bundler](http://github.com/aurelia/bundler). A gulp task is already configured for that. Use the following command to bundle the app:
-
-  ```shell
-    gulp bundle
-  ```
-
-You can also unbundle using the command bellow:
-
-  ```shell
-  gulp unbundle
-  ```
-
-## Running The Unit Tests
-
-To run the unit tests, first ensure that you have followed the steps above in order to install all dependencies and successfully build the library. Once you have done that, proceed with these additional steps:
-
-1. Ensure that the [Karma](http://karma-runner.github.io/) CLI is installed. If you need to install it, use the following command:
-
-  ```shell
-  npm install -g karma-cli
-  ```
-2. Install Aurelia libs for test visibility:
-
-```shell
-jspm install aurelia-framework
-jspm install aurelia-http-client
-jspm install aurelia-router
-```
-3. You can now run the tests with this command:
-
-  ```shell
-  karma start
-  ```
-
-## Running The E2E Tests
-Integration tests are performed with [Protractor](http://angular.github.io/protractor/#/).
-
-1. Place your E2E-Tests into the folder ```test/e2e/src```
-2. Install the necessary webdriver
-
-  ```shell
-  gulp webdriver_update
-  ```
-
-3. Configure the path to the webdriver by opening the file ```protractor.conf.js``` and adjusting the ```seleniumServerJar``` property. Typically its only needed to adjust the version number.
-
-4. Make sure your app runs and is accessible
-
-  ```shell
-  gulp watch
-  ```
-
-5. In another console run the E2E-Tests
-
-  ```shell
-  gulp e2e
-  ```
