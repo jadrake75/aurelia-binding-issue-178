@@ -1,0 +1,33 @@
+<template>
+  <require from="panel1"></require>
+  <require from="panel2"></require>
+  <section class="au-animate">
+    <h2>Aurelia-binding Issue #178</h2>
+
+    <b>Steps to Reproduce:</b> Click on one of the rows that has children, then click on a row without children.
+    <hr>
+    <div class="container">
+      <div class="row" style="max-height:150px; overflow:auto;">
+        <table>
+          <tr>
+            <th>Name</th>
+              <th>Description</th>
+            <th>Has children?</th>
+          </tr>
+          <tr repeat.for="model of models" click.delegate="$parent.select(model)" class="${($parent.selected.id === model.id) ? 'selected' : ''}">
+            <td>${model.name}</td>
+            <td>${model.description}</td>
+            <td>${model.hasChild}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="row">
+        <br/>
+        <br/>
+        <panel-1 model.bind="selected"></panel-1>
+        <panel-2 model.bind="child" if.bind="selected.hasChild"></panel-2>
+      </div>
+    </div>
+
+  </section>
+</template>
